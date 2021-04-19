@@ -1,14 +1,14 @@
 
 BL51 BANKED LINKER/LOCATER V6.05 - SN: Eval Version
 COPYRIGHT KEIL ELEKTRONIK GmbH 1987 - 2007
-"C:\Users\momen\Downloads\app\app.obj"  TO "C:\Users\momen\Downloads\app\app"  RS(256) PL(68) PW(78)  
+"C:\Users\momen\Desktop\Traffic_light\app.obj"  TO "C:\Users\momen\Desktop\Traffic_light\app"  RS(256) PL(68) PW(78)  
 
 ******************************************************************************
-* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 006AH BYTE ( 5%) *
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 00D7H BYTE (10%) *
 ******************************************************************************
 
 >> 
 >> 
 >> 
-Program Size: data=8.0 xdata=0 code=1035
+Program Size: data=8.0 xdata=0 code=1298
 LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
