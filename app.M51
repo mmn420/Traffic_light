@@ -1,4 +1,4 @@
-BL51 BANKED LINKER/LOCATER V6.05              04/20/2021  00:22:48  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.05              04/20/2021  00:42:55  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.05, INVOKED BY:
@@ -67,7 +67,7 @@ SYMBOL TABLE OF MODULE:  C:\Users\momen\Desktop\Traffic_light\app (APP)
   B:00C8H.0       SYMBOL        CPRL2
   D:009EH         SYMBOL        CPT0CN
   D:009FH         SYMBOL        CPT1CN
-BL51 BANKED LINKER/LOCATER V6.05            04/20/2021  00:22:48  PAGE 2
+BL51 BANKED LINKER/LOCATER V6.05            04/20/2021  00:42:55  PAGE 2
 
 
   B:00D8H.6       SYMBOL        CR
@@ -79,7 +79,7 @@ SYMBOL TABLE OF MODULE:  C:\Users\momen\Desktop\Traffic_light\app (APP)
   D:00D7H         SYMBOL        DAC1CN
   D:00D6H         SYMBOL        DAC1H
   D:00D5H         SYMBOL        DAC1L
-  C:00BDH         SYMBOL        DELAY
+  C:00BAH         SYMBOL        DELAY
   D:0083H         SYMBOL        DPH
   D:0082H         SYMBOL        DPL
   B:00A8H.7       SYMBOL        EA
@@ -103,29 +103,29 @@ SYMBOL TABLE OF MODULE:  C:\Users\momen\Desktop\Traffic_light\app (APP)
   B:00D0H.1       SYMBOL        F1
   D:00B7H         SYMBOL        FLACL
   D:00B6H         SYMBOL        FLSCL
-  C:005DH         SYMBOL        FREQ0
-  C:0061H         SYMBOL        FREQ1
-  C:0065H         SYMBOL        FREQ2
+  C:005AH         SYMBOL        FREQ0
+  C:005EH         SYMBOL        FREQ1
+  C:0062H         SYMBOL        FREQ2
+  C:0052H         SYMBOL        FREQS
   D:00A8H         SYMBOL        IE
   B:0088H.1       SYMBOL        IE0
   B:0088H.3       SYMBOL        IE1
-  C:0072H         SYMBOL        IN1
-  C:0080H         SYMBOL        IN2
-  C:0077H         SYMBOL        INCREMENT10S
-  C:0069H         SYMBOL        INCREMENT1S
+  C:006FH         SYMBOL        IN1
+  C:007DH         SYMBOL        IN2
+  C:0074H         SYMBOL        INCREMENT10S
+  C:0066H         SYMBOL        INCREMENT1S
   D:00B8H         SYMBOL        IP
   B:0088H.0       SYMBOL        IT0
   B:0088H.2       SYMBOL        IT1
-  C:0052H         SYMBOL        L
-  C:008FH         SYMBOL        LEDOFF
-  C:0085H         SYMBOL        LEDON
-  C:00C3H         SYMBOL        LOOP1
-  C:0096H         SYMBOL        LOOP10
-  C:00C1H         SYMBOL        LOOP2
-  C:00A4H         SYMBOL        LOOP20
-  C:00BFH         SYMBOL        LOOP3
-  C:00BAH         SYMBOL        MAIN
-  C:009AH         SYMBOL        MAX
+  C:008CH         SYMBOL        LEDOFF
+  C:0082H         SYMBOL        LEDON
+  C:00C0H         SYMBOL        LOOP1
+  C:0093H         SYMBOL        LOOP10
+  C:00BEH         SYMBOL        LOOP2
+  C:00A1H         SYMBOL        LOOP20
+  C:00BCH         SYMBOL        LOOP3
+  C:00B7H         SYMBOL        MAIN
+  C:0097H         SYMBOL        MAX
   C:0047H         SYMBOL        MEM
   B:00F8H.5       SYMBOL        MODF
   B:00F8H.1       SYMBOL        MSTEN
@@ -135,7 +135,7 @@ SYMBOL TABLE OF MODULE:  C:\Users\momen\Desktop\Traffic_light\app (APP)
   B:00D0H.0       SYMBOL        P
   D:0080H         SYMBOL        P0
   D:00A4H         SYMBOL        P0MDOUT
-BL51 BANKED LINKER/LOCATER V6.05            04/20/2021  00:22:48  PAGE 3
+BL51 BANKED LINKER/LOCATER V6.05            04/20/2021  00:42:55  PAGE 3
 
 
   D:0090H         SYMBOL        P1
@@ -203,7 +203,7 @@ SYMBOL TABLE OF MODULE:  C:\Users\momen\Desktop\Traffic_light\app (APP)
   D:0098H         SYMBOL        SCON0
   D:00F1H         SYMBOL        SCON1
   C:0030H         SYMBOL        SETUP
-BL51 BANKED LINKER/LOCATER V6.05            04/20/2021  00:22:48  PAGE 4
+BL51 BANKED LINKER/LOCATER V6.05            04/20/2021  00:42:55  PAGE 4
 
 
   B:00C0H.3       SYMBOL        SI
@@ -271,7 +271,7 @@ SYMBOL TABLE OF MODULE:  C:\Users\momen\Desktop\Traffic_light\app (APP)
   C:0016H         LINE#         23
   C:0018H         LINE#         24
   C:001BH         LINE#         25
-BL51 BANKED LINKER/LOCATER V6.05            04/20/2021  00:22:48  PAGE 5
+BL51 BANKED LINKER/LOCATER V6.05            04/20/2021  00:42:55  PAGE 5
 
 
   C:001DH         LINE#         26
@@ -301,72 +301,71 @@ SYMBOL TABLE OF MODULE:  C:\Users\momen\Desktop\Traffic_light\app (APP)
   C:0055H         LINE#         57
   C:0056H         LINE#         58
   C:0058H         LINE#         59
-  C:005BH         LINE#         60
-  C:005DH         LINE#         62
-  C:005FH         LINE#         63
-  C:0061H         LINE#         65
-  C:0063H         LINE#         66
-  C:0065H         LINE#         68
-  C:0067H         LINE#         69
+  C:005AH         LINE#         61
+  C:005CH         LINE#         62
+  C:005EH         LINE#         64
+  C:0060H         LINE#         65
+  C:0062H         LINE#         67
+  C:0064H         LINE#         68
+  C:0066H         LINE#         70
   C:0069H         LINE#         71
-  C:006CH         LINE#         72
-  C:006EH         LINE#         73
-  C:0070H         LINE#         74
-  C:0072H         LINE#         75
-  C:0073H         LINE#         76
-  C:0075H         LINE#         77
+  C:006BH         LINE#         72
+  C:006DH         LINE#         73
+  C:006FH         LINE#         74
+  C:0070H         LINE#         75
+  C:0072H         LINE#         76
+  C:0074H         LINE#         79
   C:0077H         LINE#         80
-  C:007AH         LINE#         81
-  C:007CH         LINE#         82
-  C:007EH         LINE#         83
-  C:0080H         LINE#         84
-  C:0081H         LINE#         85
-  C:0083H         LINE#         86
+  C:0079H         LINE#         81
+  C:007BH         LINE#         82
+  C:007DH         LINE#         83
+  C:007EH         LINE#         84
+  C:0080H         LINE#         85
+  C:0082H         LINE#         88
   C:0085H         LINE#         89
-  C:0088H         LINE#         90
+  C:0087H         LINE#         90
   C:008AH         LINE#         91
-  C:008DH         LINE#         92
-  C:008FH         LINE#         95
+  C:008CH         LINE#         94
+  C:008EH         LINE#         95
   C:0091H         LINE#         96
-  C:0094H         LINE#         97
-  C:0096H         LINE#         100
-  C:0098H         LINE#         101
+  C:0093H         LINE#         99
+  C:0095H         LINE#         100
+  C:0097H         LINE#         103
   C:009AH         LINE#         104
-  C:009DH         LINE#         105
-  C:009EH         LINE#         106
-  C:009FH         LINE#         107
-  C:00A0H         LINE#         108
-  C:00A2H         LINE#         109
-  C:00A4H         LINE#         111
-  C:00A5H         LINE#         112
-BL51 BANKED LINKER/LOCATER V6.05            04/20/2021  00:22:48  PAGE 6
+  C:009BH         LINE#         105
+  C:009CH         LINE#         106
+  C:009DH         LINE#         107
+  C:009FH         LINE#         108
+  C:00A1H         LINE#         110
+  C:00A2H         LINE#         111
+  C:00A3H         LINE#         112
+BL51 BANKED LINKER/LOCATER V6.05            04/20/2021  00:42:55  PAGE 6
 
 
-  C:00A6H         LINE#         113
-  C:00A7H         LINE#         114
-  C:00A9H         LINE#         116
-  C:00ABH         LINE#         117
+  C:00A4H         LINE#         113
+  C:00A6H         LINE#         115
+  C:00A8H         LINE#         116
+  C:00A9H         LINE#         118
   C:00ACH         LINE#         119
-  C:00AFH         LINE#         120
-  C:00B0H         LINE#         122
-  C:00B1H         LINE#         123
-  C:00B2H         LINE#         124
-  C:00B3H         LINE#         125
+  C:00ADH         LINE#         121
+  C:00AEH         LINE#         122
+  C:00AFH         LINE#         123
+  C:00B0H         LINE#         124
+  C:00B2H         LINE#         126
   C:00B5H         LINE#         127
-  C:00B8H         LINE#         128
-  C:00BAH         LINE#         131
-  C:00BDH         LINE#         136
-  C:00BFH         LINE#         137
-  C:00C1H         LINE#         138
-  C:00C3H         LINE#         141
-  C:00C5H         LINE#         143
-  C:00C7H         LINE#         144
-  C:00C9H         LINE#         145
+  C:00B7H         LINE#         130
+  C:00BAH         LINE#         135
+  C:00BCH         LINE#         136
+  C:00BEH         LINE#         137
+  C:00C0H         LINE#         140
+  C:00C2H         LINE#         142
+  C:00C4H         LINE#         143
+  C:00C6H         LINE#         144
   -------         ENDMOD        APP
 
 ******************************************************************************
 >> 
-* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 00D7H BYTE (10%) *
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 00D4H BYTE (10%) *
 >> 
 ******************************************************************************
 >> 
