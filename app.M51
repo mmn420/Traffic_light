@@ -1,4 +1,4 @@
-BL51 BANKED LINKER/LOCATER V6.05              04/20/2021  01:12:11  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.05              04/20/2021  03:54:18  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.05, INVOKED BY:
@@ -67,7 +67,7 @@ SYMBOL TABLE OF MODULE:  C:\Users\momen\Desktop\Traffic_light\app (APP)
   B:00C8H.0       SYMBOL        CPRL2
   D:009EH         SYMBOL        CPT0CN
   D:009FH         SYMBOL        CPT1CN
-BL51 BANKED LINKER/LOCATER V6.05            04/20/2021  01:12:11  PAGE 2
+BL51 BANKED LINKER/LOCATER V6.05            04/20/2021  03:54:18  PAGE 2
 
 
   B:00D8H.6       SYMBOL        CR
@@ -135,7 +135,7 @@ SYMBOL TABLE OF MODULE:  C:\Users\momen\Desktop\Traffic_light\app (APP)
   B:00D0H.0       SYMBOL        P
   D:0080H         SYMBOL        P0
   D:00A4H         SYMBOL        P0MDOUT
-BL51 BANKED LINKER/LOCATER V6.05            04/20/2021  01:12:11  PAGE 3
+BL51 BANKED LINKER/LOCATER V6.05            04/20/2021  03:54:18  PAGE 3
 
 
   D:0090H         SYMBOL        P1
@@ -203,7 +203,7 @@ SYMBOL TABLE OF MODULE:  C:\Users\momen\Desktop\Traffic_light\app (APP)
   D:0098H         SYMBOL        SCON0
   D:00F1H         SYMBOL        SCON1
   C:002FH         SYMBOL        SETUP
-BL51 BANKED LINKER/LOCATER V6.05            04/20/2021  01:12:11  PAGE 4
+BL51 BANKED LINKER/LOCATER V6.05            04/20/2021  03:54:18  PAGE 4
 
 
   B:00C0H.3       SYMBOL        SI
@@ -271,98 +271,98 @@ SYMBOL TABLE OF MODULE:  C:\Users\momen\Desktop\Traffic_light\app (APP)
   C:0016H         LINE#         23
   C:0018H         LINE#         24
   C:001BH         LINE#         25
-BL51 BANKED LINKER/LOCATER V6.05            04/20/2021  01:12:11  PAGE 5
+BL51 BANKED LINKER/LOCATER V6.05            04/20/2021  03:54:18  PAGE 5
 
 
   C:001DH         LINE#         26
   C:001FH         LINE#         27
-  C:0022H         LINE#         28
-  C:0025H         LINE#         29
-  C:0028H         LINE#         30
-  C:002BH         LINE#         31
-  C:002DH         LINE#         32
-  C:002FH         LINE#         35
-  C:0030H         LINE#         36
-  C:0031H         LINE#         37
-  C:0033H         LINE#         38
-  C:0034H         LINE#         39
-  C:0035H         LINE#         40
-  C:0037H         LINE#         41
-  C:0039H         LINE#         42
-  C:003BH         LINE#         43
-  C:003EH         LINE#         45
-  C:0041H         LINE#         46
-  C:0044H         LINE#         48
-  C:0046H         LINE#         51
-  C:0048H         LINE#         52
-  C:004BH         LINE#         53
-  C:004EH         LINE#         54
-  C:0051H         LINE#         56
-  C:0054H         LINE#         57
-  C:0055H         LINE#         58
-  C:0057H         LINE#         59
-  C:0059H         LINE#         61
-  C:005BH         LINE#         62
-  C:005DH         LINE#         64
-  C:005FH         LINE#         65
-  C:0061H         LINE#         67
-  C:0063H         LINE#         68
-  C:0065H         LINE#         70
-  C:0068H         LINE#         71
-  C:006AH         LINE#         72
-  C:006CH         LINE#         73
-  C:006EH         LINE#         74
-  C:006FH         LINE#         75
-  C:0071H         LINE#         76
-  C:0073H         LINE#         79
-  C:0076H         LINE#         80
-  C:0078H         LINE#         81
-  C:007AH         LINE#         82
-  C:007CH         LINE#         83
-  C:007DH         LINE#         84
-  C:007FH         LINE#         85
-  C:0081H         LINE#         88
-  C:0084H         LINE#         89
-  C:0086H         LINE#         90
-  C:0088H         LINE#         91
-  C:008AH         LINE#         92
-  C:008CH         LINE#         95
-  C:008EH         LINE#         96
-  C:0090H         LINE#         97
-  C:0092H         LINE#         98
-  C:0094H         LINE#         101
-  C:0096H         LINE#         102
-  C:0098H         LINE#         105
-  C:009BH         LINE#         106
-  C:009CH         LINE#         107
-  C:009DH         LINE#         108
-  C:009EH         LINE#         109
-  C:00A0H         LINE#         110
-  C:00A2H         LINE#         112
-BL51 BANKED LINKER/LOCATER V6.05            04/20/2021  01:12:11  PAGE 6
+  C:0022H         LINE#         29
+  C:0025H         LINE#         30
+  C:0028H         LINE#         31
+  C:002BH         LINE#         32
+  C:002DH         LINE#         33
+  C:002FH         LINE#         37
+  C:0030H         LINE#         38
+  C:0031H         LINE#         39
+  C:0033H         LINE#         40
+  C:0034H         LINE#         41
+  C:0035H         LINE#         42
+  C:0037H         LINE#         43
+  C:0039H         LINE#         44
+  C:003BH         LINE#         45
+  C:003EH         LINE#         47
+  C:0041H         LINE#         48
+  C:0044H         LINE#         50
+  C:0046H         LINE#         53
+  C:0048H         LINE#         54
+  C:004BH         LINE#         55
+  C:004EH         LINE#         56
+  C:0051H         LINE#         58
+  C:0054H         LINE#         59
+  C:0055H         LINE#         60
+  C:0057H         LINE#         61
+  C:0059H         LINE#         63
+  C:005BH         LINE#         64
+  C:005DH         LINE#         66
+  C:005FH         LINE#         67
+  C:0061H         LINE#         69
+  C:0063H         LINE#         70
+  C:0065H         LINE#         72
+  C:0068H         LINE#         73
+  C:006AH         LINE#         74
+  C:006CH         LINE#         75
+  C:006EH         LINE#         76
+  C:006FH         LINE#         77
+  C:0071H         LINE#         78
+  C:0073H         LINE#         81
+  C:0076H         LINE#         82
+  C:0078H         LINE#         83
+  C:007AH         LINE#         84
+  C:007CH         LINE#         85
+  C:007DH         LINE#         86
+  C:007FH         LINE#         87
+  C:0081H         LINE#         90
+  C:0084H         LINE#         91
+  C:0086H         LINE#         92
+  C:0088H         LINE#         93
+  C:008AH         LINE#         95
+  C:008CH         LINE#         98
+  C:008EH         LINE#         99
+  C:0090H         LINE#         100
+  C:0092H         LINE#         102
+  C:0094H         LINE#         105
+  C:0096H         LINE#         106
+  C:0098H         LINE#         109
+  C:009BH         LINE#         110
+  C:009CH         LINE#         111
+  C:009DH         LINE#         112
+  C:009EH         LINE#         113
+  C:00A0H         LINE#         114
+  C:00A2H         LINE#         116
+BL51 BANKED LINKER/LOCATER V6.05            04/20/2021  03:54:18  PAGE 6
 
 
-  C:00A3H         LINE#         113
-  C:00A4H         LINE#         114
-  C:00A5H         LINE#         115
-  C:00A7H         LINE#         117
-  C:00A9H         LINE#         118
-  C:00AAH         LINE#         120
-  C:00ADH         LINE#         121
-  C:00AEH         LINE#         123
-  C:00AFH         LINE#         124
-  C:00B0H         LINE#         125
-  C:00B1H         LINE#         126
-  C:00B3H         LINE#         128
-  C:00B6H         LINE#         129
-  C:00B8H         LINE#         132
-  C:00BBH         LINE#         137
-  C:00BDH         LINE#         138
-  C:00BFH         LINE#         139
-  C:00C1H         LINE#         142
-  C:00C3H         LINE#         144
-  C:00C5H         LINE#         145
-  C:00C7H         LINE#         146
+  C:00A3H         LINE#         117
+  C:00A4H         LINE#         118
+  C:00A5H         LINE#         119
+  C:00A7H         LINE#         121
+  C:00A9H         LINE#         122
+  C:00AAH         LINE#         124
+  C:00ADH         LINE#         125
+  C:00AEH         LINE#         127
+  C:00AFH         LINE#         128
+  C:00B0H         LINE#         129
+  C:00B1H         LINE#         130
+  C:00B3H         LINE#         132
+  C:00B6H         LINE#         133
+  C:00B8H         LINE#         136
+  C:00BBH         LINE#         141
+  C:00BDH         LINE#         142
+  C:00BFH         LINE#         143
+  C:00C1H         LINE#         146
+  C:00C3H         LINE#         148
+  C:00C5H         LINE#         149
+  C:00C7H         LINE#         150
   -------         ENDMOD        APP
 
 ******************************************************************************

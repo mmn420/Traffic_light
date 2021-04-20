@@ -1,4 +1,4 @@
-A51 MACRO ASSEMBLER  APP                                                                  04/20/2021 01:12:11 PAGE     1
+A51 MACRO ASSEMBLER  APP                                                                  04/20/2021 03:54:16 PAGE     1
 
 
 MACRO ASSEMBLER A51 V8.00d
@@ -65,7 +65,7 @@ LOC  OBJ            LINE     SOURCE
   00A9          +1    56     SADDR0   DATA  0A9H   ; SERIAL PORT 0 SLAVE ADDRESS
   00AA          +1    57     ADC1CN  DATA  0AAH   ; ADC 1 CONTROL
   00AB          +1    58     ADC1CF   DATA  0ABH   ; ADC 1 ANALOG MUX CONFIGURATION
-A51 MACRO ASSEMBLER  APP                                                                  04/20/2021 01:12:11 PAGE     2
+A51 MACRO ASSEMBLER  APP                                                                  04/20/2021 03:54:16 PAGE     2
 
   00AC          +1    59     AMX1SL   DATA  0ACH   ; ADC 1 ANALOG MUX CHANNEL SELECT
   00AD          +1    60     P3IF     DATA  0ADH   ; PORT 3 EXTERNAL INTERRUPT FLAGS
@@ -133,7 +133,7 @@ LOC  OBJ            LINE     SOURCE
   00EF          +1   122     RSTSRC   DATA  0EFH   ; RESET SOURCE 
   00F0          +1   123     B        DATA  0F0H   ; B REGISTER
   00F1          +1   124     SCON1    DATA  0F1H   ; SERIAL PORT 1 CONTROL
-A51 MACRO ASSEMBLER  APP                                                                  04/20/2021 01:12:11 PAGE     3
+A51 MACRO ASSEMBLER  APP                                                                  04/20/2021 03:54:16 PAGE     3
 
   00F2          +1   125     SBUF1    DATA  0F2H   ; SERAIL PORT 1 DATA
   00F3          +1   126     SADDR1   DATA  0F3H   ; SERAIL PORT 1 
@@ -201,7 +201,7 @@ LOC  OBJ            LINE     SOURCE
                 +1   188     ;
                 +1   189     ; T2CON C8H
   00C8          +1   190     CPRL2    BIT   T2CON.0 ; CAPTURE OR RELOAD SELECT
-A51 MACRO ASSEMBLER  APP                                                                  04/20/2021 01:12:11 PAGE     4
+A51 MACRO ASSEMBLER  APP                                                                  04/20/2021 03:54:16 PAGE     4
 
   00C9          +1   191     CT2      BIT   T2CON.1 ; TIMER OR COUNTER SELECT
   00CA          +1   192     TR2      BIT   T2CON.2 ; TIMER 2 ON/OFF CONTROL
@@ -269,143 +269,149 @@ LOC  OBJ            LINE     SOURCE
   0082               254     START BIT P0.2
 0012 D280            255     SETB PB1
 0014 D281            256     SETB PB2
-A51 MACRO ASSEMBLER  APP                                                                  04/20/2021 01:12:11 PAGE     5
+A51 MACRO ASSEMBLER  APP                                                                  04/20/2021 03:54:16 PAGE     5
 
 0016 D282            257     SETB START
 0018 756105          258     MOV 61H, #05H
 001B 7C00            259     MOV R4, #00H    ;Max 1's digit
 001D 7E00            260     MOV R6, #00H    ;Max 10's digit
 001F 900400          261     MOV DPTR, #400H  
-0022 75A400          262     MOV P0MDOUT, #00h
-0025 75A5FE          263     MOV P1MDOUT, #11111110B
-0028 75A6FF          264     MOV P2MDOUT, #11111111B
-002B 7B01            265     MOV R3, #01h
-002D D2A7            266     SETB P2.7
-                     267             
-002F                 268     SETUP: 
-002F EC              269             MOV A, R4
-0030 93              270             MOVC A, @A+DPTR
-0031 F590            271             MOV P1, A
-0033 EE              272             MOV A, R6
-0034 93              273             MOVC A, @A+DPTR
-0035 F5A0            274             MOV P2, A
-0037 8E30            275             MOV 30H,R6
-0039 8C31            276             MOV 31H, R4
-003B 30827A          277     JNB START,MAIN
-                     278     
-003E 308024          279     JNB PB1,INCREMENT1S
-0041 30812F          280     JNB PB2,INCREMENT10S
-                     281     
-0044 012F            282     AJMP SETUP
+                     262     ;MOV P0MDOUT, #0FFh
+0022 75A5FF          263     MOV P1MDOUT, #0FFh
+0025 75A6FF          264     MOV P2MDOUT, #0FFh
+0028 75B000          265     MOV P3, #00h 
+002B 7B01            266     MOV R3, #01h
+002D D2B1            267     SETB P3.1
+                     268     
+                     269             
+002F                 270     SETUP: 
+002F EC              271             MOV A, R4
+0030 93              272             MOVC A, @A+DPTR
+0031 F590            273             MOV P1, A
+0033 EE              274             MOV A, R6
+0034 93              275             MOVC A, @A+DPTR
+0035 F5A0            276             MOV P2, A
+0037 8E30            277             MOV 30H,R6
+0039 8C31            278             MOV 31H, R4
+003B 30827A          279     JNB START,MAIN
+                     280     
+003E 308024          281     JNB PB1,INCREMENT1S
+0041 30812F          282     JNB PB2,INCREMENT10S
                      283     
-0046                 284     MEM:
-0046 AE30            285             MOV R6, 30H
-0048 20830E          286             JB P0.3,FREQ0
-004B 20840F          287             JB P0.4,FREQ1
-004E 208510          288             JB P0.5,FREQ2
-0051                 289             FREQS:
-0051 90050F          290             MOV DPTR,#50FH
-0054 93              291             MOVC A,@A+DPTR
-0055 F561            292             MOV 61H,A
-0057 0198            293             AJMP MAX
-0059                 294             FREQ0:
-0059 7400            295                     MOV A ,#00H
-005B 0151            296                     AJMP FREQS
-005D                 297             FREQ1:
-005D 7401            298                     MOV A ,#01H
-005F 0151            299                     AJMP FREQS
-0061                 300             FREQ2:
-0061 7402            301                     MOV A ,#02H
-0063 0151            302                     AJMP FREQS
-0065                 303     INCREMENT1S:
-0065 BC0A06          304             CJNE R4, #0AH, IN1
-0068 7C00            305             MOV R4,#00H
-006A 11BB            306             ACALL DELAY
-006C 012F            307             AJMP SETUP
-006E 0C              308             IN1:INC R4
-006F 11BB            309             ACALL DELAY
-0071 012F            310             AJMP SETUP
-                     311             
-0073                 312     INCREMENT10S:
-0073 BE0A06          313             CJNE R6,#0AH,IN2
-0076 7E00            314             MOV R6,#00H
-0078 11BB            315             ACALL DELAY
-007A 012F            316             AJMP SETUP
-007C 0E              317             IN2:INC R6
-007D 11BB            318             ACALL DELAY
-007F 012F            319             AJMP SETUP
-                     320                     
-0081                 321     LEDON:
-0081 BB0008          322             CJNE R3,#0h,LEDOFF
-A51 MACRO ASSEMBLER  APP                                                                  04/20/2021 01:12:11 PAGE     6
+0044 012F            284     AJMP SETUP
+                     285     
+0046                 286     MEM:
+0046 AE30            287             MOV R6, 30H
+0048 20830E          288             JB P0.3,FREQ0
+004B 20840F          289             JB P0.4,FREQ1
+004E 208510          290             JB P0.5,FREQ2
+0051                 291             FREQS:
+0051 90050F          292             MOV DPTR,#50FH
+0054 93              293             MOVC A,@A+DPTR
+0055 F561            294             MOV 61H,A
+0057 0198            295             AJMP MAX
+0059                 296             FREQ0:
+0059 7400            297                     MOV A ,#00H
+005B 0151            298                     AJMP FREQS
+005D                 299             FREQ1:
+005D 7401            300                     MOV A ,#01H
+005F 0151            301                     AJMP FREQS
+0061                 302             FREQ2:
+0061 7402            303                     MOV A ,#02H
+0063 0151            304                     AJMP FREQS
+0065                 305     INCREMENT1S:
+0065 BC0A06          306             CJNE R4, #0AH, IN1
+0068 7C00            307             MOV R4,#00H
+006A 11BB            308             ACALL DELAY
+006C 012F            309             AJMP SETUP
+006E 0C              310             IN1:INC R4
+006F 11BB            311             ACALL DELAY
+0071 012F            312             AJMP SETUP
+                     313             
+0073                 314     INCREMENT10S:
+0073 BE0A06          315             CJNE R6,#0AH,IN2
+0076 7E00            316             MOV R6,#00H
+0078 11BB            317             ACALL DELAY
+007A 012F            318             AJMP SETUP
+007C 0E              319             IN2:INC R6
+007D 11BB            320             ACALL DELAY
+007F 012F            321             AJMP SETUP
+                     322                     
+A51 MACRO ASSEMBLER  APP                                                                  04/20/2021 03:54:16 PAGE     6
 
-0084 7B01            323             MOV R3, #01h
-0086 C297            324             CLR P1.7
-0088 D2A7            325             SETB P2.7
-008A 0146            326             AJMP MEM
-                     327     
-008C                 328     LEDOFF:
-008C 7B00            329             MOV R3, #0h
-008E C2A7            330             CLR P2.7
-0090 D297            331             SETB P1.7
-0092 0146            332             AJMP MEM
-                     333     
-0094                 334     LOOP10:
-0094 7C0A            335             MOV R4, #0Ah
-0096 01A2            336             AJMP LOOP20
+0081                 323     LEDON:
+0081 BB0008          324             CJNE R3,#0h,LEDOFF
+0084 7B01            325             MOV R3, #01h
+0086 D2B1            326             SETB P3.1
+0088 C2B0            327             CLR P3.0
+                     328             ;MOV P0, #10000000B
+008A 0146            329             AJMP MEM
+                     330     
+008C                 331     LEDOFF:
+008C 7B00            332             MOV R3, #0h
+008E D2B0            333             SETB P3.0
+0090 C2B1            334             CLR P3.1
+                     335             ;MOV P0, #01000000B
+0092 0146            336             AJMP MEM
                      337     
-0098                 338     MAX:
-0098 900400          339             MOV DPTR, #400h
-009B E4              340             CLR A
-009C 2E              341             ADD A, R6
-009D 93              342         MOVC A, @A+DPTR
-009E F5A0            343         MOV P2, A
-00A0 AC31            344             MOV R4, 31H
-00A2                 345             LOOP20:
-00A2 E4              346             CLR A
-00A3 2C              347                     ADD A, R4
-00A4 93              348             MOVC A, @A+DPTR
-00A5 F590            349             MOV P1, A
-                     350     
-00A7 11BB            351             ACALL DELAY
-00A9 1C              352             DEC R4
-                     353     
-00AA BC00F5          354                     CJNE R4, #0h, LOOP20
-00AD 1E              355                     DEC R6
-                     356     
-00AE E4              357                     CLR A
-00AF 2E              358                     ADD A, R6
-00B0 93              359                     MOVC A, @A+DPTR
-00B1 F5A0            360                     MOV P2, A
-                     361     
-00B3 BE00DE          362                     CJNE R6, #0h, LOOP10
-00B6 0181            363                     AJMP LEDON
-                     364     
-00B8                 365     MAIN:
-00B8 BE00DD          366     CJNE R6,#0h,MAX
-                     367     
+0094                 338     LOOP10:
+0094 7C0A            339             MOV R4, #0Ah
+0096 01A2            340             AJMP LOOP20
+                     341     
+0098                 342     MAX:
+0098 900400          343             MOV DPTR, #400h
+009B E4              344             CLR A
+009C 2E              345             ADD A, R6
+009D 93              346         MOVC A, @A+DPTR
+009E F5A0            347         MOV P2, A
+00A0 AC31            348             MOV R4, 31H
+00A2                 349             LOOP20:
+00A2 E4              350             CLR A
+00A3 2C              351                     ADD A, R4
+00A4 93              352             MOVC A, @A+DPTR
+00A5 F590            353             MOV P1, A
+                     354     
+00A7 11BB            355             ACALL DELAY
+00A9 1C              356             DEC R4
+                     357     
+00AA BC00F5          358                     CJNE R4, #0h, LOOP20
+00AD 1E              359                     DEC R6
+                     360     
+00AE E4              361                     CLR A
+00AF 2E              362                     ADD A, R6
+00B0 93              363                     MOVC A, @A+DPTR
+00B1 F5A0            364                     MOV P2, A
+                     365     
+00B3 BE00DE          366                     CJNE R6, #0h, LOOP10
+00B6 0181            367                     AJMP LEDON
                      368     
-                     369     
-00BB                 370     DELAY :
-00BB AA61            371             MOV R2,61H
-00BD 79C8            372             LOOP3:MOV R1,#200
-00BF 78C6            373             LOOP2:MOV R0,#198
-                     374     
-00C1                 375             LOOP1:
-00C1 D8FE            376             DJNZ R0,LOOP1
-                     377     
-00C3 D9FA            378             DJNZ R1,LOOP2
-00C5 DAF6            379             DJNZ R2,LOOP3
-00C7 22              380             RET
+00B8                 369     MAIN:
+00B8 BE00DD          370     CJNE R6,#0h,MAX
+                     371     
+                     372     
+                     373     
+00BB                 374     DELAY :
+00BB AA61            375             MOV R2,61H
+00BD 79C8            376             LOOP3:MOV R1,#200
+00BF 78C6            377             LOOP2:MOV R0,#198
+                     378     
+00C1                 379             LOOP1:
+00C1 D8FE            380             DJNZ R0,LOOP1
                      381     
-0401                 382     ORG 401H
-0401 3F065B4F        383     DB 3FH,06H,5BH,4FH,66H,6DH,7DH,07H,7FH,6FH
+00C3 D9FA            382             DJNZ R1,LOOP2
+00C5 DAF6            383             DJNZ R2,LOOP3
+00C7 22              384             RET
+                     385     
+0401                 386     ORG 401H
+0401 3F065B4F        387     DB 3FH,06H,5BH,4FH,66H,6DH,7DH,07H,7FH,6FH
 0405 666D7D07                
+A51 MACRO ASSEMBLER  APP                                                                  04/20/2021 03:54:16 PAGE     7
+
 0409 7F6F                    
-050F                 384     ORG 50FH
-050F 050A14          385     DB 05H, 0AH, 014H 
-                     386     END
-A51 MACRO ASSEMBLER  APP                                                                  04/20/2021 01:12:11 PAGE     7
+050F                 388     ORG 50FH
+050F 050A14          389     DB 05H, 0AH, 014H 
+                     390     END
+A51 MACRO ASSEMBLER  APP                                                                  04/20/2021 03:54:16 PAGE     8
 
 XREF SYMBOL TABLE LISTING
 ---- ------ ----- -------
@@ -458,7 +464,7 @@ DAC0L. . . . . . .  D ADDR   00D2H   A      94#
 DAC1CN . . . . . .  D ADDR   00D7H   A      99#
 DAC1H. . . . . . .  D ADDR   00D6H   A      98#
 DAC1L. . . . . . .  D ADDR   00D5H   A      97#
-DELAY. . . . . . .  C ADDR   00BBH   A      306 309 315 318 351 370#
+DELAY. . . . . . .  C ADDR   00BBH   A      308 311 317 320 355 374#
 DPH. . . . . . . .  D ADDR   0083H   A      20#
 DPL. . . . . . . .  D ADDR   0082H   A      19#
 EA . . . . . . . .  B ADDR   00A8H.7 A      170#
@@ -473,7 +479,7 @@ ENSMB. . . . . . .  B ADDR   00C0H.6 A      187#
 ES . . . . . . . .  B ADDR   00A8H.4 A      168#
 ET0. . . . . . . .  B ADDR   00A8H.1 A      165#
 ET1. . . . . . . .  B ADDR   00A8H.3 A      167#
-A51 MACRO ASSEMBLER  APP                                                                  04/20/2021 01:12:11 PAGE     8
+A51 MACRO ASSEMBLER  APP                                                                  04/20/2021 03:54:16 PAGE     9
 
 ET2. . . . . . . .  B ADDR   00A8H.5 A      169#
 EX0. . . . . . . .  B ADDR   00A8H.0 A      164#
@@ -484,44 +490,44 @@ F0 . . . . . . . .  B ADDR   00D0H.5 A      205#
 F1 . . . . . . . .  B ADDR   00D0H.1 A      201#
 FLACL. . . . . . .  D ADDR   00B7H   A      68#
 FLSCL. . . . . . .  D ADDR   00B6H   A      67#
-FREQ0. . . . . . .  C ADDR   0059H   A      286 294#
-FREQ1. . . . . . .  C ADDR   005DH   A      287 297#
-FREQ2. . . . . . .  C ADDR   0061H   A      288 300#
-FREQS. . . . . . .  C ADDR   0051H   A      289# 296 299 302
+FREQ0. . . . . . .  C ADDR   0059H   A      288 296#
+FREQ1. . . . . . .  C ADDR   005DH   A      289 299#
+FREQ2. . . . . . .  C ADDR   0061H   A      290 302#
+FREQS. . . . . . .  C ADDR   0051H   A      291# 298 301 304
 IE . . . . . . . .  D ADDR   00A8H   A      55# 164 165 166 167 168 169 170
 IE0. . . . . . . .  B ADDR   0088H.1 A      145#
 IE1. . . . . . . .  B ADDR   0088H.3 A      147#
-IN1. . . . . . . .  C ADDR   006EH   A      304 308#
-IN2. . . . . . . .  C ADDR   007CH   A      313 317#
-INCREMENT10S . . .  C ADDR   0073H   A      280 312#
-INCREMENT1S. . . .  C ADDR   0065H   A      279 303#
+IN1. . . . . . . .  C ADDR   006EH   A      306 310#
+IN2. . . . . . . .  C ADDR   007CH   A      315 319#
+INCREMENT10S . . .  C ADDR   0073H   A      282 314#
+INCREMENT1S. . . .  C ADDR   0065H   A      281 305#
 IP . . . . . . . .  D ADDR   00B8H   A      69# 173 174 175 176 177 178
 IT0. . . . . . . .  B ADDR   0088H.0 A      144#
 IT1. . . . . . . .  B ADDR   0088H.2 A      146#
-LEDOFF . . . . . .  C ADDR   008CH   A      322 328#
-LEDON. . . . . . .  C ADDR   0081H   A      321# 363
-LOOP1. . . . . . .  C ADDR   00C1H   A      375# 376
-LOOP10 . . . . . .  C ADDR   0094H   A      334# 362
-LOOP2. . . . . . .  C ADDR   00BFH   A      373# 378
-LOOP20 . . . . . .  C ADDR   00A2H   A      336 345# 354
-LOOP3. . . . . . .  C ADDR   00BDH   A      372# 379
-MAIN . . . . . . .  C ADDR   00B8H   A      277 365#
-MAX. . . . . . . .  C ADDR   0098H   A      293 338# 366
-MEM. . . . . . . .  C ADDR   0046H   A      284# 326 332
+LEDOFF . . . . . .  C ADDR   008CH   A      324 331#
+LEDON. . . . . . .  C ADDR   0081H   A      323# 367
+LOOP1. . . . . . .  C ADDR   00C1H   A      379# 380
+LOOP10 . . . . . .  C ADDR   0094H   A      338# 366
+LOOP2. . . . . . .  C ADDR   00BFH   A      377# 382
+LOOP20 . . . . . .  C ADDR   00A2H   A      340 349# 358
+LOOP3. . . . . . .  C ADDR   00BDH   A      376# 383
+MAIN . . . . . . .  C ADDR   00B8H   A      279 369#
+MAX. . . . . . . .  C ADDR   0098H   A      295 342# 370
+MEM. . . . . . . .  C ADDR   0046H   A      286# 329 336
 MODF . . . . . . .  B ADDR   00F8H.5 A      234#
 MSTEN. . . . . . .  B ADDR   00F8H.1 A      230#
 OSCICN . . . . . .  D ADDR   00B2H   A      65# 245
 OSCXCN . . . . . .  D ADDR   00B1H   A      64#
 OV . . . . . . . .  B ADDR   00D0H.2 A      202#
 P. . . . . . . . .  B ADDR   00D0H.0 A      200#
-P0 . . . . . . . .  D ADDR   0080H   A      17# 252 253 254 286 287 288
-P0MDOUT. . . . . .  D ADDR   00A4H   A      51# 262
-P1 . . . . . . . .  D ADDR   0090H   A      33# 271 324 331 349
+P0 . . . . . . . .  D ADDR   0080H   A      17# 252 253 254 288 289 290
+P0MDOUT. . . . . .  D ADDR   00A4H   A      51#
+P1 . . . . . . . .  D ADDR   0090H   A      33# 273 353
 P1MDIN . . . . . .  D ADDR   00BDH   A      74#
 P1MDOUT. . . . . .  D ADDR   00A5H   A      52# 263
-P2 . . . . . . . .  D ADDR   00A0H   A      48# 266 274 325 330 343 360
+P2 . . . . . . . .  D ADDR   00A0H   A      48# 276 347 364
 P2MDOUT. . . . . .  D ADDR   00A6H   A      53# 264
-P3 . . . . . . . .  D ADDR   00B0H   A      63#
+P3 . . . . . . . .  D ADDR   00B0H   A      63# 265 267 326 327 333 334
 P3IF . . . . . . .  D ADDR   00ADH   A      60#
 P3MDOUT. . . . . .  D ADDR   00A7H   A      54#
 P4 . . . . . . . .  D ADDR   0084H   A      21#
@@ -529,8 +535,8 @@ P5 . . . . . . . .  D ADDR   0085H   A      22#
 P6 . . . . . . . .  D ADDR   0086H   A      23#
 P7 . . . . . . . .  D ADDR   0096H   A      39#
 P74OUT . . . . . .  D ADDR   00B5H   A      66#
-PB1. . . . . . . .  B ADDR   0080H.0 A      252# 255 279
-PB2. . . . . . . .  B ADDR   0080H.1 A      253# 256 280
+PB1. . . . . . . .  B ADDR   0080H.0 A      252# 255 281
+PB2. . . . . . . .  B ADDR   0080H.1 A      253# 256 282
 PCA0CN . . . . . .  D ADDR   00D8H   A      100# 210 211 212 213 214 215 216
 PCA0CPH0 . . . . .  D ADDR   00FAH   A      133#
 PCA0CPH1 . . . . .  D ADDR   00FBH   A      134#
@@ -541,7 +547,7 @@ PCA0CPL0 . . . . .  D ADDR   00EAH   A      117#
 PCA0CPL1 . . . . .  D ADDR   00EBH   A      118#
 PCA0CPL2 . . . . .  D ADDR   00ECH   A      119#
 PCA0CPL3 . . . . .  D ADDR   00EDH   A      120#
-A51 MACRO ASSEMBLER  APP                                                                  04/20/2021 01:12:11 PAGE     9
+A51 MACRO ASSEMBLER  APP                                                                  04/20/2021 03:54:16 PAGE    10
 
 PCA0CPL4 . . . . .  D ADDR   00EEH   A      121#
 PCA0CPM0 . . . . .  D ADDR   00DAH   A      102#
@@ -582,7 +588,7 @@ SBUF0. . . . . . .  D ADDR   0099H   A      41#
 SBUF1. . . . . . .  D ADDR   00F2H   A      125#
 SCON0. . . . . . .  D ADDR   0098H   A      40# 154 155 156 157 158 159 160 161
 SCON1. . . . . . .  D ADDR   00F1H   A      124#
-SETUP. . . . . . .  C ADDR   002FH   A      268# 282 307 310 316 319
+SETUP. . . . . . .  C ADDR   002FH   A      270# 284 309 312 318 321
 SI . . . . . . . .  B ADDR   00C0H.3 A      184#
 SLVSEL . . . . . .  B ADDR   00F8H.2 A      231#
 SM0. . . . . . . .  B ADDR   0098H.7 A      161#
@@ -603,13 +609,13 @@ SPI0DAT. . . . . .  D ADDR   009BH   A      43#
 SPIEN. . . . . . .  B ADDR   00F8H.0 A      229#
 SPIF . . . . . . .  B ADDR   00F8H.7 A      236#
 STA. . . . . . . .  B ADDR   00C0H.5 A      186#
-START. . . . . . .  B ADDR   0080H.2 A      254# 257 277
+START. . . . . . .  B ADDR   0080H.2 A      254# 257 279
 STO. . . . . . . .  B ADDR   00C0H.4 A      185#
 T2CON. . . . . . .  D ADDR   00C8H   A      85# 190 191 192 193 194 195 196 197
 T4CON. . . . . . .  D ADDR   00C9H   A      86#
 TB8. . . . . . . .  B ADDR   0098H.3 A      157#
 TCLK . . . . . . .  B ADDR   00C8H.4 A      194#
-A51 MACRO ASSEMBLER  APP                                                                  04/20/2021 01:12:11 PAGE    10
+A51 MACRO ASSEMBLER  APP                                                                  04/20/2021 03:54:16 PAGE    11
 
 TCON . . . . . . .  D ADDR   0088H   A      25# 144 145 146 147 148 149 150 151
 TF0. . . . . . . .  B ADDR   0088H.5 A      149#
